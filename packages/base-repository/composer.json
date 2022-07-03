@@ -1,0 +1,19 @@
+{
+    "name": "longtnt/base-repository",
+    "description": "use for generate repository",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Longtnt\\BaseRepository\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Châu Ngọc Long",
+            "email": "longcn@beetsoft.com.vn"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
