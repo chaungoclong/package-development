@@ -747,10 +747,18 @@ abstract class BaseRepository implements RepositoryInterface
      * @param array  $arguments
      *
      * @return mixed
+     * @throws Exception
      */
     public function __call(string $method, array $arguments)
     {
-        return call_user_func_array(array($this->model, $method), $arguments);
+        $this->applyScope();
+
+        $results = call_user_func_array(array($this->model, $method), $arguments);
+
+        $this->resetModel();
+        $this->resetScope();
+
+        return $results;
     }
 
     /**

@@ -16,7 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function (\App\Repositories\UserRepositoryEloquent $userRepository) {
-    $userRepository->sync(1, 'posts', Post::all());
-
-    dd($userRepository->find(1)->posts()->delete());
+    dd($userRepository->get());
 });
